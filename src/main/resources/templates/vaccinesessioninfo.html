@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Coronavirus Tracker Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+    <h1>Vaccine Session Information</h1>
+
+
+    <div class="jumbotron">
+        <h1 class="display-4" th:text="${totalWardsAvailable}"></h1>
+        <p class="lead">: ward(s) available for you today</p>
+        <hr class="my-4">
+        <p>
+            <span>Total Vaccine shot(s) Available today:</span>
+            <span th:text="${totalVaccineShots}"></span>
+
+        </p>
+
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>Ward Name</th>
+            <th>Fees</th>
+            <th>Minimum Age Limit</th>
+            <th>Total Availability</th>
+        </tr>
+        <tr th:each="allStat : ${allstats}">
+            <td th:text="${allStat.name}"></td>
+            <td th:text="${allStat.fees}"></td>
+            <td th:text="${allStat.age_limit}">-1</td>
+            <td th:text="${allStat.availablity}">0</td>
+        </tr>
+    </table>
+</div>
+</body>
+
+</html>

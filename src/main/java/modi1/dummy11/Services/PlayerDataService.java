@@ -1,8 +1,7 @@
 package modi1.dummy11.Services;
 
 
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
+
 import modi1.dummy11.models.Data;
 import modi1.dummy11.models.MailTemplate;
 import modi1.dummy11.models.VDU;

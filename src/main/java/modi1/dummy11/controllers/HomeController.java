@@ -48,9 +48,9 @@ public class HomeController {
             List<VaccineSession> allStats = pds.getVaccineSessions();
             model.addAttribute("allstats", allStats);
             int totalwardsavailable = allStats.size();
-           // int totalvaccineshots = allStats.stream().mapToInt(stat -> Integer.parseInt(stat.getAvailablity())).sum();
+            int totalvaccineshots = allStats.stream().mapToInt(stat -> Integer.parseInt(stat.getAvailablity())).sum();
             model.addAttribute("totalWardsAvailable", totalwardsavailable);
-            model.addAttribute("totalVaccineShots", 5);
+            model.addAttribute("totalVaccineShots", totalvaccineshots);
 
         }
         else
@@ -61,9 +61,9 @@ public class HomeController {
             List<VaccineSession> allStats = pds.getVaccineSessions();
             model.addAttribute("allstats", allStats);
             int totalwardsavailable = allStats.size();
-           // int totalvaccineshots = allStats.stream().mapToInt(stat -> Integer.parseInt(stat.getAvailablity())).sum();
+            int totalvaccineshots = allStats.stream().mapToInt(stat -> Integer.parseInt(stat.getAvailablity())).sum();
             model.addAttribute("totalWardsAvailable", totalwardsavailable);
-            model.addAttribute("totalVaccineShots", 5);
+            model.addAttribute("totalVaccineShots", totalvaccineshots);
             String Values ="VALUES ("+"'"+emailid+"'"+","+"'"+pincode+"'"+","+"'"+age+"'"+")";
             String sql="INSERT INTO Person (emailid, pincode,age)"+Values;
             jdbcTemplate.execute(sql);
